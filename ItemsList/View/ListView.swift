@@ -18,7 +18,9 @@ struct ListView: View {
         NavigationView {
             Group {
                 if case let .error(error) = self.viewModel.state {
-                    
+                    ReloadView(errorMessage: error) {
+                        viewModel.onAppear()
+                    }
                 } else if case .loading = self.viewModel.state {
                     ProgressView("Loading..")
                 } else {

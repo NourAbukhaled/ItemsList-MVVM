@@ -11,12 +11,11 @@ import Combine
 final class ListViewModel: ObservableObject {
     
     // MARK: Properties
-    @Published var state: ListState<[ItemModel]> = .populated([.init([.example])])
+    @Published var state: ListState<[ItemModel]> = .loading
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: LifeCycle
     func onAppear() {
-        state = .loading
         RequestHelper().loadList()
             .sink(receiveCompletion: { [weak self] result in
                 switch result {
@@ -25,8 +24,8 @@ final class ListViewModel: ObservableObject {
                 case let .failure(error):
                     self?.state = .error(error.localizedDescription)
                 }
-            }, receiveValue: { [weak self] result in
-                let items = result.results
+            }, receiveValue: { [weak self] value in
+                let items = value.results
                 self?.state = .populated([items])
             }).store(in: &cancellables)
     }
