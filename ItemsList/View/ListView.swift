@@ -8,8 +8,34 @@
 import SwiftUI
 
 struct ListView: View {
+    
+    // MARK: Properties
+    @ObservedObject
+    private var viewModel = ListViewModel()
+    
+    // MARK: Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Group {
+                if case let .error(error) = self.viewModel.state {
+                    
+                } else if case .loading = self.viewModel.state {
+                    ProgressView("Loading..")
+                } else {
+                    List(viewModel.state.items.first ?? [], id: \.self) { item in
+                        NavigationLink(
+                            destination: DetailsView(item: item),
+                            label: {
+                                ItemRow(item: item)
+                            })
+                    }
+                }
+            }
+            .navigationBarTitle("List")
+            .onAppear {
+                self.viewModel.onAppear()
+            }
+        }
     }
 }
 

@@ -7,11 +7,11 @@
 
 import Foundation
 
-class ResultsModel: Codable {
+class ResultModel: Codable {
     var results: [ItemModel]
 }
 
-class ItemModel: Codable {
+struct ItemModel: Codable, Hashable {
     var createdAt: String
     var price: String
     var name: String
@@ -37,11 +37,37 @@ class ItemModel: Codable {
         }
         return nil
     }
-
+    
+    init(createdAt: String
+         ,price: String
+         ,name: String
+         ,uid: String
+         ,imageIds: [String]
+         ,imageUrls: [String]
+         ,imageUrlsThumbnails: [String]) {
+        self.createdAt = createdAt
+        self.price = price
+        self.name = name
+        self.uid = uid
+        self.imageIds = imageIds
+        self.imageUrls = imageUrls
+        self.imageUrlsThumbnails = imageUrlsThumbnails
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case createdAt = "created_at", price, name, uid,
              imageIds = "image_ids",
              imageUrls = "image_urls",
              imageUrlsThumbnails = "image_urls_thumbnails"
+    }
+    
+    static var example: ItemModel {
+        .init(createdAt: "ddugaigdai",
+              price: "ajdbaidbia",
+              name: "qhyoihioho",
+              uid: "bjsabfkjbfkfk",
+              imageIds: ["wihriwohrio"],
+              imageUrls: ["ywuyryauur"],
+              imageUrlsThumbnails: ["iuywqitqiutiei"])
     }
 }
