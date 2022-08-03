@@ -24,16 +24,16 @@ struct ItemModel: Codable, Hashable {
         return imageIds.first
     }
 
-    var imageURL: URL? {
+    var imageURL: String? {
         if let imageUrl = imageUrls.first {
-            return URL(string: imageUrl)
+            return imageUrl
         }
         return nil
     }
 
-    var imageThumbnail: URL? {
+    var imageThumbnail: String? {
         if let imageThumb = imageUrlsThumbnails.first {
-            return URL(string: imageThumb)
+            return imageThumb
         }
         return nil
     }

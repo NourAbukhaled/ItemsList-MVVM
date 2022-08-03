@@ -9,12 +9,12 @@ import Foundation
 
 enum ListState<T> {
     
-    case populated([T])
+    case populated(T)
     case error(String)
     case loading
     
-    var items: [T] {
-        guard case let .populated(items) = self else { return [] }
+    var items: T {
+        guard case let .populated(items) = self else { return [] as! T }
         return items
     }
 }

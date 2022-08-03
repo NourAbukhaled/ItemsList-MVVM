@@ -26,7 +26,7 @@ final class ListViewModel: ObservableObject {
                 }
             }, receiveValue: { [weak self] value in
                 let items = value.results
-                self?.state = .populated([items])
+                self?.state = .populated(items)
             }).store(in: &cancellables)
     }
 }

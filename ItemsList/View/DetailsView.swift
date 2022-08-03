@@ -16,7 +16,7 @@ struct DetailsView: View {
         ScrollView {
             VStack(alignment: .center) {
                 ZStack(alignment: .bottomTrailing) {
-                    WebImage(url: item.imageUrls.first ?? "")
+                    WebImage(url: item.imageURL ?? "")
                         .clipShape(Circle())
                         .overlay(Circle().stroke(Color.white, lineWidth: 4)
                                     .shadow(radius: 7))

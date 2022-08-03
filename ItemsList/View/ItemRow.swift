@@ -19,7 +19,7 @@ struct ItemRow: View {
     // MARK: Body
     var body: some View {
         HStack(alignment: .center) {
-            WebImage(url: item.imageUrls.first ?? "")
+            WebImage(url: item.imageURL ?? "")
                 .clipShape(RoundedRectangle(cornerRadius: 6))
                 .frame(width: 110, height: 140)
                 .aspectRatio(contentMode: .fill)

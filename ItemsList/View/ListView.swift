@@ -24,7 +24,7 @@ struct ListView: View {
                 } else if case .loading = self.viewModel.state {
                     ProgressView("Loading..")
                 } else {
-                    List(viewModel.state.items.first ?? [], id: \.self) { item in
+                    List(viewModel.state.items , id: \.self) { item in
                         NavigationLink(
                             destination: DetailsView(item: item),
                             label: {
