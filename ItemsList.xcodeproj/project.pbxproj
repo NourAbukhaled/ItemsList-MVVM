@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5A8447352899961D0075D939 /* ItemsListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8447342899961D0075D939 /* ItemsListApp.swift */; };
-		5A8447372899961D0075D939 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8447362899961D0075D939 /* ContentView.swift */; };
 		5A8447392899961E0075D939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8447382899961E0075D939 /* Assets.xcassets */; };
 		5A84473C2899961E0075D939 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A84473B2899961E0075D939 /* Preview Assets.xcassets */; };
 		5A8447452899993B0075D939 /* itemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8447442899993B0075D939 /* itemModel.swift */; };
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		5A8447312899961D0075D939 /* ItemsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItemsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8447342899961D0075D939 /* ItemsListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListApp.swift; sourceTree = "<group>"; };
-		5A8447362899961D0075D939 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A8447382899961E0075D939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A84473B2899961E0075D939 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A84473D2899961E0075D939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 		5A8447332899961D0075D939 /* ItemsList */ = {
 			isa = PBXGroup;
 			children = (
-				5A8447362899961D0075D939 /* ContentView.swift */,
 				5A844743289998210075D939 /* Application */,
 				5A844746289999400075D939 /* Model */,
 				5A84474C289999B30075D939 /* View */,
@@ -209,7 +206,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8447452899993B0075D939 /* itemModel.swift in Sources */,
-				5A8447372899961D0075D939 /* ContentView.swift in Sources */,
 				5A84475D289B2C060075D939 /* ReloadView.swift in Sources */,
 				5A8447542899E4E50075D939 /* WebImage.swift in Sources */,
 				5A84475B289A73020075D939 /* RequestHelper.swift in Sources */,
