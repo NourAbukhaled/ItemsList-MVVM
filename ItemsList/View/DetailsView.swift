@@ -24,12 +24,12 @@ struct DetailsView: View {
                 }
                 VStack {
                     Text("Name: " + item.name)
-                        .frame(maxHeight: 97)
-                    Text("Price: " + item.price).padding()
-                        .frame(maxHeight: 97)
+                    Text("Price: " + item.price)
+                    Text("created at: " + item.createdAt)
                 }
             }
         }
+        .padding()
         .navigationBarTitle(item.name, displayMode: .inline)
         .edgesIgnoringSafeArea(.bottom)
     }

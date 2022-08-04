@@ -18,19 +18,22 @@ struct ItemRow: View {
     
     // MARK: Body
     var body: some View {
-        HStack(alignment: .center) {
-            WebImage(url: item.imageURL ?? "")
-                .clipShape(RoundedRectangle(cornerRadius: 6))
-                .frame(width: 110, height: 140)
-                .aspectRatio(contentMode: .fill)
-                .shadow(radius: 10, y: 10)
-            VStack(alignment: .leading, spacing: 20) {
-                Text(item.name)
-                    .font(.headline)
-                Text(item.price)
+        ZStack(alignment: .leading) {
+            Color.gray
+            HStack(alignment: .center, spacing: 10) {
+                WebImage(url: item.imageURL ?? "")
+                    .clipShape(RoundedRectangle(cornerRadius: 6))
+                    .frame(width: 110, height: 140)
+                    .aspectRatio(contentMode: .fill)
+                    .shadow(radius: 10, y: 10)
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(item.name)
+                        .font(.headline)
+                    Text(item.price)
+                }
             }
-            Spacer()
-        }
+        }.clipShape(RoundedRectangle(cornerRadius: 15))
+        .foregroundColor(.white)
     }
 }
 
