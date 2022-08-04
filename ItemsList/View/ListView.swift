@@ -24,12 +24,15 @@ struct ListView: View {
                 } else if case .loading = self.viewModel.state {
                     ProgressView("Loading..")
                 } else {
-                    List(viewModel.state.items , id: \.self) { item in
-                        NavigationLink(
-                            destination: DetailsView(item: item),
-                            label: {
-                                ItemRow(item: item)
-                            })
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(self.viewModel.state.items, id: \.self) { item in
+                                NavigationLink(destination: DetailsView(item: item)) {
+                                    ItemRow(item: item)
+                                        .padding(8)
+                                }
+                            }
+                        }
                     }
                 }
             }
