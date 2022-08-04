@@ -36,7 +36,7 @@ struct ListView: View {
                     }
                 }
             }
-            .navigationBarTitle("List")
+            .navigationBarTitle("Items")
             .onAppear {
                 self.viewModel.onAppear()
             }
