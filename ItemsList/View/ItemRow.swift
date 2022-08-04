@@ -10,11 +10,7 @@ import SwiftUI
 struct ItemRow: View {
     
     // MARK: Properties
-    private let item: ItemModel
-    
-    init(item: ItemModel) {
-        self.item = item
-    }
+     var item: ItemModel
     
     // MARK: Body
     var body: some View {
